@@ -2,10 +2,14 @@
 #include <iostream>
 #include <time.h>
 
+
 CGameManager* CGameManager::m_pInst = nullptr;
 
 CGameManager::CGameManager() :
-	arr{}, input(0), m_NN((int)sqrt(m_N)), bingo(0)
+	arr{}, input(0), m_NN((int)sqrt(m_N)), bingo(0), fruit
+{"하나","둘", "셋", "넷", "다섯", "여섯", "일곱", "여덟", "아홉", "열", 
+"열하나", "열둘", "열셋", "열넷", "열다섯", "열여섯", "열일곱", "열여덟", "열아홉", "스물", 
+"스물하나", "스물둘", "스물셋", "스물넷", "스물다섯"}
 {
 
 }
@@ -40,7 +44,7 @@ void CGameManager::Shuffle()
 
 	for (int i = 0; i < m_N; ++i)
 	{
-		arr[i] = rand() % 25 + 1;
+		arr[i] = rand() % 25;
 
 		for (int j = 0; j < i; ++j)
 		{
@@ -62,11 +66,11 @@ void CGameManager::Render()
 
 		if ((i + 1) % 5 == 0)
 		{
-			std::cout <<arr[i]<< std::endl;
+			std::cout << fruit[arr[i]].GetName() << std::endl;
 		}
 		else
 		{
-			std::cout << arr[i]<<"\t";
+			std::cout << fruit[arr[i]].GetName() << "\t";
 		}
 	}
 }
@@ -74,12 +78,12 @@ void CGameManager::Render()
 void CGameManager::Input()
 {
 	std::cin >> input;
-	if (input < 0 || input>25)
+	/*if (input < 0 || input>25)
 	{
 		std::cout << "올바른 범위의 수를 입력하세요\t";
 		system("pause");
 		system("cls");
-	}
+	}*/
 	system("cls");
 }
 

@@ -1,4 +1,5 @@
 #pragma once
+#include "Fruit.h"
 class CGameManager
 {
 private:
@@ -25,5 +26,7 @@ public:
 	void BingoCount();
 	void Minus1();
 	void run();
+
+	CFruit fruit[m_N];
 };
 
