@@ -111,9 +111,9 @@ void CGameManager::Minus1()
 {
 	for (int i = 0; i < m_N; ++i)
 	{
-		if (arr[i] == input)
+		if (fruit[arr[i]].GetName() == input)
 		{
-			arr[i] = -1;
+			fruit[arr[i]] = " - 1";//¸ó°¡ ¾È´ï
 		}
 	}
 }

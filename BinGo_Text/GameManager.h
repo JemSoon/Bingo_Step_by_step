@@ -16,7 +16,7 @@ public:
 	static const int m_N = 25;
 	int m_NN;
 	int arr[m_N];
-	int input;
+	char* input;
 	int bingo;
 
 public:
